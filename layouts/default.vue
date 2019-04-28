@@ -1,11 +1,9 @@
 <template>
-  <v-app dark>
+  <v-app light>
     <v-navigation-drawer
       v-model="drawer"
-      :mini-variant="miniVariant"
-      :clipped="clipped"
       fixed
-      app
+      class="hidden-sm-and-up"
     >
       <v-list>
         <v-list-tile
@@ -24,62 +22,35 @@
         </v-list-tile>
       </v-list>
     </v-navigation-drawer>
-    <v-toolbar
-      :clipped-left="clipped"
-      fixed
-      app
-    >
-      <v-toolbar-side-icon @click="drawer = !drawer" />
-      <v-btn
-        icon
-        @click.stop="miniVariant = !miniVariant"
+     <v-responsive dark>
+      <v-toolbar
+        :clipped-right="clipped"
+        fixed
+        app
+        class="transparent"
       >
-        <v-icon>{{ `chevron_${miniVariant ? 'right' : 'left'}` }}</v-icon>
-      </v-btn>
-      <v-btn
-        icon
-        @click.stop="clipped = !clipped"
-      >
-        <v-icon>web</v-icon>
-      </v-btn>
-      <v-btn
-        icon
-        @click.stop="fixed = !fixed"
-      >
-        <v-icon>remove</v-icon>
-      </v-btn>
-      <v-toolbar-title v-text="title" />
-      <v-spacer />
-      <v-btn
-        icon
-        @click.stop="rightDrawer = !rightDrawer"
-      >
-        <v-icon>menu</v-icon>
-      </v-btn>
-    </v-toolbar>
+        <v-img :src="logo" 
+        max-width="125px"
+        class="mt-4"
+        ></v-img>
+
+        <v-spacer />
+        <v-toolbar-items class="hidden-xs-only mt-4" 
+            v-for="(item, i) in items"
+            :key="i"
+            :to="item.to"
+            router
+            exact> 
+          <nuxt-link :to="item.to" class="nuxt-link-active subheading font-weight-regular" exact>{{item.title}}</nuxt-link>
+        </v-toolbar-items>
+        <v-toolbar-side-icon @click="drawer = !drawer" class="hidden-sm-and-up mt-4"></v-toolbar-side-icon>
+      </v-toolbar>
+     </v-responsive>
     <v-content>
-      <v-container>
-        <nuxt />
-      </v-container>
+      <nuxt />
     </v-content>
-    <v-navigation-drawer
-      v-model="rightDrawer"
-      :right="right"
-      temporary
-      fixed
-    >
-      <v-list>
-        <v-list-tile @click.native="right = !right">
-          <v-list-tile-action>
-            <v-icon light>compare_arrows</v-icon>
-          </v-list-tile-action>
-          <v-list-tile-title>Switch drawer (click me)</v-list-tile-title>
-        </v-list-tile>
-      </v-list>
-    </v-navigation-drawer>
     <v-footer
-      :fixed="fixed"
-      app
+      
     >
       <span>&copy; 2019</span>
     </v-footer>
@@ -95,21 +66,29 @@ export default {
       fixed: false,
       items: [
         {
-          icon: 'apps',
-          title: 'Welcome',
+          title: 'Inicio',
           to: '/'
         },
         {
-          icon: 'bubble_chart',
-          title: 'Inspire',
-          to: '/inspire'
+          title: 'Nosotros',
+          to: '/nosotros'
+        },
+        {
+          title: 'Culturas',
+          to: '/cultura'
+        },
+        {
+          title: 'Atractivos',
+          to: '/atractivo'
+        },
+        {
+          title: 'Contacto',
+          to: '/contacto'
         }
       ],
-      miniVariant: false,
-      right: true,
-      rightDrawer: false,
-      title: 'Vuetify.js'
+      logo: '/images/logo.png'
     }
   }
 }
 </script>
+

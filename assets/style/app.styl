@@ -1,2 +1,32 @@
 // Import Vuetify styling
 @require '~vuetify/src/stylus/app.styl'
+
+//My Modifications
+.v-content
+    padding-top: 0 !important;
+
+.layout
+    padding-top: 80px;
+
+.v-toolbar
+    min-height: 80px;
+    box-shadow: none !important;
+    background: linear-gradient(to top, transparent 0, rgba(0,0,0,0.4) 100%) repeat-x;
+    .v-toolbar__content
+        height: 56px !important;
+
+    &__items
+        margin-left: 1em;
+        margin-right: 1em;
+
+.nuxt-link-exact-active
+    color:#ccc !important
+
+
+.nuxt-link-active
+    text-decoration: none
+    color: #ffffff
+    margin: auto
+    &:hover
+        color: #ccc
+    

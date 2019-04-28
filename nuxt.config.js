@@ -73,5 +73,11 @@ module.exports = {
     */
     extend(config, ctx) {
     }
-  }
+  },
+
+  /**
+   * Active class for nuxt-Link
+   */
+
+  linkActiveClass: 'active-link'
 }
