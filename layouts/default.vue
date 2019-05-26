@@ -1,5 +1,6 @@
 <template>
   <v-app >
+    <notifications group="guest" />
     <v-navigation-drawer
       v-model="drawer"
       fixed
@@ -23,6 +24,7 @@
         :clipped-right="clipped"
         fixed
         app
+        class="toolbar-guest"
         :class="{'transparented':toolbarShadow, 'scrolled':!toolbarShadow}"
       >
         <v-img :src="logo" 
@@ -175,7 +177,7 @@ export default {
   methods:{
     onScroll (e) {
         this.offsetTop = window.pageYOffset || document.documentElement.scrollTop
-        console.log(this.existCarousel)
+        //console.log(this.existCarousel)
         if (!this.existCarousel) {
           this.toolbarShadow = false;
         }else{

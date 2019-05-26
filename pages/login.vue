@@ -8,7 +8,8 @@
                     <v-form
                         ref="form"
                         v-model="valid"
-                        lazy-validation>
+                        lazy-validation
+                        >
 
                         <v-text-field
                             v-model="email"
@@ -48,7 +49,7 @@ export default {
             email: '',
             emailRules:[
                 v => !!v || "E-mail requerido.",
-                v => /.+@.+.+/.test(v) || 'Ingresa un e-mail válido.'
+                //v => /.+@.+.+/.test(v) || 'Ingresa un e-mail válido.'
             ],
             password:'',
             passRules:[
@@ -58,13 +59,34 @@ export default {
     },
     methods:{
         validate () {
-            if (this.$refs.form.validate()) {
-                this.snackbar = true
+            const app = this
+            if (app.$refs.form.validate()) {
+                app.snackbar = true
+                app.login()
             }
         },
         reset () {
             this.$refs.form.reset()
         },
-    }
+        async login() {
+            let app =  this
+            try {
+                await app.$store.dispatch('login', {
+                    email: app.email,
+                    password: app.password
+                })
+                // app.reset();
+            } catch (e) {
+                console.log(e)
+                app.$notify({
+                    group: 'guest',
+                    title: 'Error',
+                    type: 'error',
+                    text: 'Credenciales incorrectas.'
+                });
+                app.reset();
+            }
+        },
+    },
 }
 </script>

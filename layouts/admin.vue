@@ -1,6 +1,7 @@
 <template>
   <v-app >
-    <!-- <v-navigation-drawer
+    <notifications group="admin" />
+    <v-navigation-drawer
       v-model="drawer"
       :mini-variant="miniVariant"
       :clipped="clipped"
@@ -23,46 +24,46 @@
           </v-list-tile-content>
         </v-list-tile>
       </v-list>
-    </v-navigation-drawer> -->
+    </v-navigation-drawer>
     <v-toolbar
       :clipped-right="clipped"
       fixed
       app
     >
-      <!-- <v-toolbar-side-icon @click="drawer = !drawer" /> -->
-      <!-- <v-btn
+      <v-toolbar-side-icon @click="drawer = !drawer" />
+      <v-btn
         icon
         @click.stop="miniVariant = !miniVariant"
       >
         <v-icon>{{ `chevron_${miniVariant ? 'right' : 'left'}` }}</v-icon>
-      </v-btn> -->
-      <!-- <v-btn
+      </v-btn> 
+       <v-btn
         icon
         @click.stop="clipped = !clipped"
       >
         <v-icon>web</v-icon>
-      </v-btn> -->
-      <!-- <v-btn
+      </v-btn> 
+       <v-btn
         icon
         @click.stop="fixed = !fixed"
       >
         <v-icon>remove</v-icon>
-      </v-btn> -->
+      </v-btn> 
       <v-toolbar-title v-text="title" />
       <v-spacer />
-      <!-- <v-btn
+      <v-btn
         icon
         @click.stop="rightDrawer = !rightDrawer"
       >
         <v-icon>menu</v-icon>
-      </v-btn> -->
+      </v-btn>
     </v-toolbar>
     <v-content>
       <v-container>
         <nuxt />
       </v-container>
     </v-content>
-    <!-- <v-navigation-drawer
+    <v-navigation-drawer
       v-model="rightDrawer"
       :right="right"
       temporary
@@ -76,7 +77,7 @@
           <v-list-tile-title>Switch drawer (click me)</v-list-tile-title>
         </v-list-tile>
       </v-list>
-    </v-navigation-drawer> -->
+    </v-navigation-drawer>
     <v-footer
       :fixed="fixed"
       app
@@ -88,6 +89,7 @@
 
 <script>
 export default {
+  middleware: 'auth',
   data() {
     return {
       clipped: false,
@@ -96,19 +98,19 @@ export default {
       items: [
         {
           icon: 'apps',
-          title: 'Welcome',
-          to: '/'
+          title: 'Inicio',
+          to: '/admin'
         },
         {
           icon: 'bubble_chart',
-          title: 'Inspire',
-          to: '/inspire'
+          title: 'Usuario',
+          to: '/admin-user'
         }
       ],
       miniVariant: false,
       right: true,
       rightDrawer: false,
-      title: 'Vuetify.js'
+      title: 'Administrador'
     }
   }
 }
