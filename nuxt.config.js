@@ -40,7 +40,12 @@ module.exports = {
   ** Plugins to load before mounting the App
   */
   plugins: [
-    '@/plugins/vuetify'
+    //'@/plugins/axios.js',
+    '@/plugins/vuetify',
+    "@/plugins/google-maps",
+    "@/plugins/route",
+    "@/plugins/vue-notifications",
+    // { src: '@/plugins/nuxt-client-init.js', ssr: false }
   ],
 
   /*
@@ -49,6 +54,8 @@ module.exports = {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
+    '@nuxtjs/dotenv',
+    'nuxt-client-init-module'
   ],
   /*
   ** Axios module configuration
@@ -56,7 +63,12 @@ module.exports = {
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
   },
-
+  router: {
+    //middleware: ['auth']
+  },
+  serverMiddleware: [
+    '~/api'
+  ],
   /*
   ** Build configuration
   */
@@ -73,5 +85,13 @@ module.exports = {
     */
     extend(config, ctx) {
     }
-  }
+  },
+
+  /**
+   * Active class for nuxt-Link
+   */
+
+  linkActiveClass: 'active-link',
+
+
 }

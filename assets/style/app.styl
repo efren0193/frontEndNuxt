@@ -1,2 +1,115 @@
 // Import Vuetify styling
 @require '~vuetify/src/stylus/app.styl'
+
+//My Modifications
+.theme--light.application 
+    background: #ffffff !important
+.v-content
+    padding-top: 0 !important;
+
+.layout
+    padding-top: 80px;
+
+//Mixins for menu top and scroll
+.transparented
+    min-height: 80px;
+    box-shadow: none !important;
+    padding-top: 15px;
+    background: linear-gradient(to top, transparent 0, rgba(0,0,0,0.3) 100%) repeat-x !important;
+    &__content
+        height: 70px !important;
+        -webkit-transition: height 0.4s; /* Safari */
+        transition: height 0.4s;
+    .v-image
+        max-width: 125px;
+    .nuxt-link-exact-active
+        padding-bottom: 8px;
+        border-bottom: 2px solid white
+    .nuxt-link-active
+        color: #ffffff
+        &:hover
+            color: #ccc
+    &__side-icon
+        color: white !important;
+        margin-right: 0 !important;
+
+.v-toolbar
+    @extend .transparented
+      
+    &__items
+        margin-left: 1em;
+        margin-right: 1em;
+    .nuxt-link-active
+        padding-bottom: 8px
+        text-decoration: none
+        margin: auto
+    //When scrolled active this values
+    &.scrolled
+        // background: #616161 !important
+        background: #ffffff !important;
+        min-height: 60px !important
+        padding-top: 5px !important;
+        box-shadow: 0px 2px 4px -1px rgba(0,0,0,0.2), 0px 4px 5px 0px rgba(0,0,0,0.14), 0px 1px 10px 0px rgba(0,0,0,0.12) !important;
+        &__content
+            height: 50px !important;  
+            -webkit-transition: height 0.4s; /* Safari */
+            transition: height 0.4s;
+        .v-image
+            max-width: 100px;
+        .nuxt-link-exact-active
+            padding-bottom: 8px;
+            border-bottom: 2px solid #616161
+        .nuxt-link-active
+            color: #616161
+            &:hover
+                color: #ccc
+
+        .v-toolbar__side-icon
+            color: #616161 !important;
+            margin-right: 0 !important;
+
+.v-parallax
+    &__content
+        padding: 0 !important;
+
+.v-list__tile
+    height: 60px !important;
+    &__title
+        border-bottom: 1px solid #BDBDBD
+        line-height: 10px !important
+        padding-left: 10px
+        color: #616161 !important
+    &--active
+        background:rgba(0,0,0,0.1) !important
+
+
+.v-footer
+    height: auto !important
+    .v-social
+        display: block
+        width: min-content
+        margin-left: 5px;
+        margin-right: 5px;
+    .v-list
+        background: transparent !important;
+        &__tile
+            height: 30px !important
+            font-size: 13px !important
+            text-decoration: underline !important
+            padding: 0 !important
+            &--active
+                background: transparent !important
+            &__title
+                border-bottom: none !important
+                height: auto !important
+                line-height: initial !important
+
+.v-divider
+    border-width: thin !important
+
+.list-news-home
+    .v-list__tile
+        height: auto !important
+        .v-card
+            width: 100%
+            //margin: auto !important
