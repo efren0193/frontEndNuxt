@@ -42,9 +42,6 @@ module.exports = {
   plugins: [
     //'@/plugins/axios.js',
     '@/plugins/vuetify',
-    "@/plugins/google-maps",
-    "@/plugins/route",
-    "@/plugins/vue-notifications",
     // { src: '@/plugins/nuxt-client-init.js', ssr: false }
   ],
 
@@ -54,8 +51,7 @@ module.exports = {
   modules: [
     // Doc: https://axios.nuxtjs.org/usage
     '@nuxtjs/axios',
-    '@nuxtjs/dotenv',
-    'nuxt-client-init-module'
+    '@nuxtjs/dotenv'
   ],
   /*
   ** Axios module configuration
@@ -67,7 +63,7 @@ module.exports = {
     //middleware: ['auth']
   },
   serverMiddleware: [
-    '~/api'
+   
   ],
   /*
   ** Build configuration
