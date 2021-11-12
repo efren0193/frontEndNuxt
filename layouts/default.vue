@@ -68,15 +68,15 @@ export default {
       fixed: false,
       items: [
         {
-          title: 'Home',
+          title: 'Inicio',
           to: '/'
         },
         {
-          title: 'Weather',
+          title: 'Clima',
           to: '/weather'
         },
         {
-          title: 'Favorites',
+          title: 'Favoritos',
           to: '/favorites'
         },
         

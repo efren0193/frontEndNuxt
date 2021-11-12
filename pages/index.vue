@@ -3,7 +3,7 @@
 
   <v-container >
     <!-- Init cards -->
-    <h1 class="h1 grey--text darken-4--text text-sm-center">Explore</h1>
+    <h1 class="h1 grey--text darken-4--text text-sm-center">Explorar</h1>
     <v-layout
       row wrap
       justify-center
@@ -20,14 +20,14 @@
             <v-container fill-height fluid>
               <v-layout fill-height>
                 <v-flex xs12 align-end flexbox>
-                  <span class="headline">Weather</span>
+                  <span class="headline">Clima</span>
                 </v-flex>
               </v-layout>
             </v-container>
           </v-img>
           <v-card-actions>
             
-            <v-btn flat color="green darken-4"><NuxtLink to="/weather">Explore</NuxtLink></v-btn>
+            <v-btn flat color="green darken-4"><NuxtLink to="/weather">Explorar</NuxtLink></v-btn>
           </v-card-actions>
         </v-card>
       </v-flex>
@@ -41,13 +41,13 @@
             <v-container fill-height fluid>
               <v-layout fill-height>
                 <v-flex xs12 align-end flexbox>
-                  <span class="headline">Favorites</span>
+                  <span class="headline">Favoritos</span>
                 </v-flex>
               </v-layout>
             </v-container>
           </v-img>
           <v-card-actions>
-            <v-btn flat color="green darken-4"><NuxtLink to="/favorites">Explore</NuxtLink></v-btn>
+            <v-btn flat color="green darken-4"><NuxtLink to="/favorites">Explorar</NuxtLink></v-btn>
           </v-card-actions>
         </v-card>
       </v-flex>

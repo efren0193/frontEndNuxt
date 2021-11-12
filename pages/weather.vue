@@ -4,7 +4,7 @@
       <v-card>
         <v-toolbar color="teal" dark>
 
-          <v-toolbar-title>List Cities</v-toolbar-title>
+          <v-toolbar-title>Ciudades</v-toolbar-title>
 
           <v-spacer></v-spacer>
 
@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import List from '~/components/List.vue'
+import List from '~/components/WeatherList.vue'
 export default {
   components:{
     List
